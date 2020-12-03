@@ -1,26 +1,23 @@
+
+//concat and slice
+      //cut string up to 40 symbols
+      //add ... to string
+      // bring back old or new version
+
+
 const formatString = function(string){
-    console.log("string: ", string);
+    // console.log("string: ", string);
 
-    const longString = string.split(" ");
-    let longestString = longString [0];
-    
-    
+    if(string.length > 40){
 
-    for( let i = 1; i <= 40; i += 1){
+      
 
-        if(longestString.length <= longString[i].length){
-            longestString = longString [i];
-
-        }
-        else if (longestString.length > longString[i].length) {
-            
-            longString.push('...');
-        }
-
-        return longString;
+      const newString = string.slice(0,40) .concat('...');
+      return newString;
+    }else {
+      return string;
     }
-        
-}
+  };
 
 console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
 // вернется оригинальная строка
