@@ -1,24 +1,23 @@
+// Если длина строки не превышает 40 символов, функция возвращает
+//  ее в исходном виде.
 
-//concat and slice
-      //cut string up to 40 symbols
-      //add ... to string
-      // bring back old or new version
+// Если длина больше 40 символов, то функция обрезает строку
+//  до 40-ка символов и добавляет в конец строки
+//   троеточие '...', после чего возвращает укороченную версию.
+
 
 
 const formatString = function(string){
-    // console.log("string: ", string);
+  // let longString = string.slice(0,40) && string.concat('...');
+  if(string.length > 40){
+      const longString = string.slice(0,40).concat('...');
+      return longString;
 
-    if(string.length > 40){
+  }else{
+      return string
+  }
 
-      
-
-      const newString = string.slice(0,40) .concat('...');
-      return newString;
-    }else {
-      return string;
-    }
-  };
-
+}
 console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
 // вернется оригинальная строка
 
@@ -29,7 +28,7 @@ console.log(formatString('Curabitur ligula sapien.'));
 // вернется оригинальная строка
 
 console.log(
-  formatString(
-    'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
-  ),
+formatString(
+  'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
+),
 );
